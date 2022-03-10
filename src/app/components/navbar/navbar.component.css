@@ -1,0 +1,14 @@
+.navbar {
+    width: 100%;
+    background-color: gray;
+    min-height: 2vh;
+    position: sticky;
+    text-decoration:none;
+    padding: 2rem;
+}
+
+.navbar a {
+    padding: 5px;
+    color: white;
+    font-size: medium;
+}

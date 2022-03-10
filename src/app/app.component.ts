@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularLesson01';
+
+  // mvc uygulamalarında layout olarak kullanılır.
 }
