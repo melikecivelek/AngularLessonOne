@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +6,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  @Input() bgColor:string  = 'gray'; // c# property gibi
+  @Input() fontSize:string = '24px';
+  @Input() textColor:string = 'white';
+
+  // field eğer değişkenin önüne private yazarsak htmlden erişilemez.
+  links:any[] = [
+    {
+      url:'/',
+      name:'Anasayfa'
+    },
+    {
+      url:'/about',
+      name:'Hakkımızda'
+    },
+    {
+      url:'/contact',
+      name:'İletişim'
+    },
+    {
+      url:'product',
+      name:'Ürünler'
+    },
+    {
+      url:'counter',
+      name:'Sayac'
+    }
+  ];
+
 
   constructor() { }
 

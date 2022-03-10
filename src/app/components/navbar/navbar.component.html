@@ -1,9 +1,14 @@
-<nav class="navbar">
+<nav [ngStyle]="{'background-color':bgColor}" class="navbar">
     <!-- internalLink href -->
-    <a routerLink="/">Anasayfa</a>
-    <a routerLink="/about">Hakkımızda</a>
-    <a routerLink="/contact">İletişim</a>
-    <a routerLink="/product">Ürünler</a>
-    <a href="https://www.google.com">Google</a>
+
+    <a [routerLink]="item.url" [ngStyle]="{'color':textColor,'font-size':fontSize}" *ngFor="let item of links">
+        {{item.name}}
+    </a>
+
+    <!-- <a  routerLink="/">Anasayfa</a>
+    <a [ngStyle]="{'color':textColor, 'font-size':fontSize}" routerLink="/about">Hakkımızda</a>
+    <a [ngStyle]="{'color':textColor, 'font-size':fontSize}" routerLink="/contact">İletişim</a>
+    <a [ngStyle]="{'color':textColor, 'font-size':fontSize}" routerLink="/product">Ürünler</a> -->
+    <a [ngStyle]="{'color':textColor, 'font-size':fontSize}" href="https://www.google.com">Google</a>
     <!-- external link href kullanacağız -->
 </nav>

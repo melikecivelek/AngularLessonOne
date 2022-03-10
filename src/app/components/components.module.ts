@@ -5,6 +5,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from './button/button.component';
+import { CounterButtonComponent } from './counter-button/counter-button.component';
+
 
 
 // NgModule modül olduğunu belirtir.
@@ -13,7 +15,8 @@ import { ButtonComponent } from './button/button.component';
     LayoutComponent,
     NavbarComponent,
     FooterComponent,
-    ButtonComponent
+    ButtonComponent,
+    CounterButtonComponent
   ], // component yazılır. Bu modül içerisindeki component
   imports: [
     CommonModule,
@@ -21,7 +24,9 @@ import { ButtonComponent } from './button/button.component';
   ],
   exports:[
     LayoutComponent,
+    CounterButtonComponent,
     ButtonComponent // AppComponente Layout kullanacağız.
+
   ]
 })
 export class ComponentsModule { }
