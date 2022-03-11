@@ -6,6 +6,8 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from './button/button.component';
 import { CounterButtonComponent } from './counter-button/counter-button.component';
+import { BsAlertComponent } from './bs-alert/bs-alert.component';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 
 
@@ -16,16 +18,19 @@ import { CounterButtonComponent } from './counter-button/counter-button.componen
     NavbarComponent,
     FooterComponent,
     ButtonComponent,
-    CounterButtonComponent
+    CounterButtonComponent,
+    BsAlertComponent
   ], // component yazılır. Bu modül içerisindeki component
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    AlertModule.forRoot()
   ],
   exports:[
     LayoutComponent,
     CounterButtonComponent,
-    ButtonComponent // AppComponente Layout kullanacağız.
+    ButtonComponent,
+    BsAlertComponent // AppComponente Layout kullanacağız.
 
   ]
 })
