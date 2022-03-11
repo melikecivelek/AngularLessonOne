@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -13,6 +13,10 @@ export class BsModalComponent implements OnInit {
   constructor(private modalService: BsModalService) {} // dependency injection var. component içerisinde servislere bağlanırken dependency injection yapıyoruz. modalService instance alınmış oldu
 
   
+  @Input() header:string = ''
+  @Input() body:string = '';
+  @Input() modalButtonTitle:string = 'Open'
+
   ngOnInit(): void {
   
   }
