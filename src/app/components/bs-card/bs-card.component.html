@@ -1,0 +1,24 @@
+<div class="card" [ngStyle]="styles?.container">
+    <div class="card-body">
+      <h5 class="card-title" [ngStyle]="styles?.title">
+
+        <!-- ng-template içindeki değerleri sayfaya bind için ng-container diye özel bir component sarıcı kullanırız. -->
+
+        <ng-container
+        [ngTemplateOutlet]="titleTemplate"
+        [ngTemplateOutletContext]="{ $implicit: item }">
+      </ng-container>
+
+     
+      </h5>
+      <p class="card-text" [ngStyle]="styles?.body">
+
+        <ng-container
+        [ngTemplateOutlet]="bodyTemplate"
+        [ngTemplateOutletContext]="{ $implicit: item }">
+      </ng-container>
+
+      </p>
+      <a href="#" class="btn btn-primary">{{buttonText}}</a>
+    </div>
+  </div>

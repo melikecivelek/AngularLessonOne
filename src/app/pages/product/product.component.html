@@ -1,3 +1,60 @@
-<p>Ürünler Sayfası!</p>
+<!-- <p>Ürünler Sayfası!</p> -->
 
-<app-button></app-button>
+<!-- <app-button></app-button> -->
+
+<!-- angularda number,uppercase,lowercase,date,async pipeları var -->
+
+<div>
+    <h1 class="text-center"> Ürünlerimiz </h1>
+</div>
+
+<!-- | async pipe ile veriyi okuncak hale getir. -->
+<!-- c# da asenkron olan birşeyi okuyabilmek için await kullanıyoruz. burada ise | async  -->
+<!-- | htmlde bu ifadeye pipe diyoruz. mvcde helper'a denk gelir. -->
+<div class="row mx-2 mt-2">
+    <div class="col-2" *ngFor="let product of products$ | async ">
+        <app-bs-card 
+        [styles]="styles" 
+        [titleTemplate]="titleTemplate" 
+        [bodyTemplate]="bodyTemplate"
+        [item]="product"
+        [buttonText]="'Sepete Ekle'"></app-bs-card>
+    </div>
+</div>
+
+<!-- ng-template ile başka bir componente gönderilecek olan html design yapılır -->
+<!-- bu tarz dinamik sayfa tasarımlarında ng template pages componentlerde tanımlarız. -->
+<!-- angulardan geliyor -->
+<!-- # ile template id veririz. -->
+<!-- let product ile template dinamik gönderilecek değeri söyleriz. -->
+<ng-template let-a #titleTemplate>
+    <h3>
+        {{a?.category?.name | uppercase}}
+    </h3>
+</ng-template>
+
+
+<ng-template let-b #bodyTemplate>
+    <p>
+        <b style="color:yellow">Ürün:</b> {{b?.name}}
+    </p>
+    <p>
+        <b>Fiyat :</b> {{b?.unitPrice}} TL
+    </p>
+    <p>
+        <b>Stock :</b>  <i>{{b?.unitsInStock}}</i> adet
+    </p>
+</ng-template>
+
+
+<!-- <ng-template let-product #bodyTemplate>
+    <p>
+        <b style="color:red">Ürün:</b> {{product?.name | lowercase}}
+    </p>
+    <p>
+        <b>Fiyat :</b> {{product?.unitPrice | number}} TL
+    </p>
+    <p>
+        <b>Stock :</b>  {{product?.unitsInStock}} adet
+    </p>
+</ng-template> -->

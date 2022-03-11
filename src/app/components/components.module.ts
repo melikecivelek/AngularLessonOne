@@ -8,6 +8,8 @@ import { ButtonComponent } from './button/button.component';
 import { CounterButtonComponent } from './counter-button/counter-button.component';
 import { BsModalComponent } from './bs-modal/bs-modal.component';
 import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
+import { BsCardComponent } from './bs-card/bs-card.component';
+
 
 
 // NgModule modül olduğunu belirtir.
@@ -18,19 +20,21 @@ import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
     FooterComponent,
     ButtonComponent,
     CounterButtonComponent,
-    BsModalComponent
+    BsModalComponent,
+    BsCardComponent,
   ], // component yazılır. Bu modül içerisindeki component
   imports: [
     CommonModule,
     RouterModule,
-    ModalModule
+    ModalModule,
   ],
   exports:[
     // AppComponente Layout kullanacağız.
     LayoutComponent,
     CounterButtonComponent,
     ButtonComponent,
-    BsModalComponent
+    BsModalComponent,
+    BsCardComponent
 
   ],
   //providers:[BsModalService] // eğer servisi module provider olarak tanıtırsak servis singleton çalışıyor. eğer component içerisinde kullanırsak da transient çalışıyor. // pagelerde servisleri singleton tercih ediyoruz.
