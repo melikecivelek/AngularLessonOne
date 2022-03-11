@@ -6,7 +6,8 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from './button/button.component';
 import { CounterButtonComponent } from './counter-button/counter-button.component';
-
+import { BsModalComponent } from './bs-modal/bs-modal.component';
+import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 
 
 // NgModule modül olduğunu belirtir.
@@ -16,17 +17,22 @@ import { CounterButtonComponent } from './counter-button/counter-button.componen
     NavbarComponent,
     FooterComponent,
     ButtonComponent,
-    CounterButtonComponent
+    CounterButtonComponent,
+    BsModalComponent
   ], // component yazılır. Bu modül içerisindeki component
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ModalModule
   ],
   exports:[
+    // AppComponente Layout kullanacağız.
     LayoutComponent,
     CounterButtonComponent,
-    ButtonComponent // AppComponente Layout kullanacağız.
+    ButtonComponent,
+    BsModalComponent
 
-  ]
+  ],
+  //providers:[BsModalService] // eğer servisi module provider olarak tanıtırsak servis singleton çalışıyor. eğer component içerisinde kullanırsak da transient çalışıyor. // pagelerde servisleri singleton tercih ediyoruz.
 })
 export class ComponentsModule { }
